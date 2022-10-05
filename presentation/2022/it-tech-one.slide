@@ -15,7 +15,7 @@ v-argan.mega@btpnsyariah.com
 * Logo
 .image ../../image/golang-img.png
 
-* What is GoLang (must have asterisk)
+* Section 1: What is GoLang
 
 Some Text
 
@@ -31,3 +31,22 @@ Display Partial code
 - First bullet point
 - One more
 - Last one!
+
+* Section 2: Example formatting
+
+Formatting:
+_italic_
+*bold*
+`program`
+Markup—_especially_italic_text_—can easily be overused.
+_Why_use_scoped__ptr_? Use plain ***ptr* instead.
+
+Visit [[https://golang.org][the Go home page]].
+
+* Section 3: Testing
+
+.background ../../image/golang-img.png
+.iframe https://foo
+.link https://foo label
+.html ../../example/file.html
+.caption _Gopher_ by [[https://github.com/mytrix-technology][Mytrix Technology]]
