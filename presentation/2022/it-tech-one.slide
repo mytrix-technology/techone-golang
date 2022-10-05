@@ -1,0 +1,33 @@
+Golang Basic Knowledge
+First Knowledge in Go Programming Languange
+15:04 25 Oct 2022
+Tags: go, docs, knowledge
+
+Yudhistiro Tri Aronggo
+Innovation Engineering Technical Lead, PT. BTPN Syariah Tbk
+yudhistiro.aronggo@btpnsyariah.com
+https://github.com/mytrix-technology
+
+Argan Megariansyah
+Software Engineering Halmahera
+v-argan.mega@btpnsyariah.com
+
+* Logo
+.image ../../image/golang-img.png
+
+* What is GoLang (must have asterisk)
+
+Some Text
+
+* Display and highlight code
+.code ../../example/hello.go
+Display Partial code
+.code ../../example/hello.go /^//START/,/^//END/ HL12
+
+* Run your Go code
+.play ../../example/hello.go
+
+* Bullet Points
+- First bullet point
+- One more
+- Last one!
