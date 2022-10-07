@@ -1,21 +1,30 @@
 Golang Basic Knowledge
 First Knowledge in Go Programming Languange
-15:04 25 Oct 2022
+14:00 21 Oct 2022
 Tags: go, docs, knowledge
 
 Yudhistiro Tri Aronggo
-Innovation Engineering Technical Lead, PT. BTPN Syariah Tbk
+Innovation Engineering Technical Lead, BTPN Syariah
 yudhistiro.aronggo@btpnsyariah.com
 https://github.com/mytrix-technology
 
 Argan Megariansyah
-Software Engineering Halmahera
+Software Engineering Halmahera Squad
 v-argan.mega@btpnsyariah.com
+https://github.com/arganjava
 
 * Logo
 .image ../../image/golang-img.png
 
 * Section 1: What is GoLang
+
+Some Text
+
+* Section 2: What is GoLang
+
+Some Text
+
+* Section 3: Function
 
 Some Text
 
@@ -31,6 +40,21 @@ Display Partial code
 - First bullet point
 - One more
 - Last one!
+
+* Display Partial code map
+.code ../../example/map-slice/map.go /^//START/,/^//END/ HLMAP
+* Play Run
+.play ../../example/map-slice/map.go
+
+* Display Partial code slice
+.code ../../example/map-slice/slice.go /^//START/,/^//END/ HLSLICE
+* Play Run
+.play ../../example/map-slice/slice.go
+
+* Display Partial code slice-map
+.code ../../example/map-slice/slice-map.go /^//START/,/^//END/ HLSLICEMAP
+* Play Run
+.play ../../example/map-slice/slice-map.go
 
 * Section 2: Example formatting
 
