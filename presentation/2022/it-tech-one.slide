@@ -20,26 +20,9 @@ https://github.com/arganjava
 
 Some Text
 
-* Section 2: What is GoLang
+* Section 2: Array - Map - Slice
 
 Some Text
-
-* Section 3: Function
-
-Some Text
-
-* Display and highlight code
-.code ../../example/hello.go
-Display Partial code
-.code ../../example/hello.go /^//START/,/^//END/ HL12
-
-* Run your Go code
-.play ../../example/hello.go
-
-* Bullet Points
-- First bullet point
-- One more
-- Last one!
 
 * Display Partial code map
 .code ../../example/map-slice/map.go /^//START/,/^//END/ HLMAP
@@ -56,7 +39,53 @@ Display Partial code
 * Play Run
 .play ../../example/map-slice/slice-map.go
 
-* Section 2: Example formatting
+* Section 3: Pointer - Struct - Interface
+
+Some Text
+
+* Section 4: Function
+
+Some Text
+
+* Section 5: Context
+
+- contextParent: terbuat dari context.Background(), dia tidak memiliki nilai, karena konsepnya hanya akan berjalan di background.
+- ctx1: merupakan turunan pertama dari contextParent, di ctx1 di isi nilai hello world
+- ctx4: merupakan turunan dari contextParent, merupakan sibling dari ctx1. ctx1 dan ctx4 tidak bisa saling mengakses nilai.
+- ctx2 dan ctx5: merupakan turuan dari ctx1. Masing masing memiliki nilai tersendiri. Dan mereka dapat mengakses nilai dari parent mereka yakni ctx1
+- ctx3: turunan paling kecil dari contextParent. Dia memiliki nilai tersendiri juga dan dia dapat mengakses nilai dari ctx1,dan ctx2. Namun tidak bisa mengakses nilai dari ctx5 ataupun ctx4.
+
+* Best Note Context
+
+- context.Background should be used only at the highest level, as the root of all derived contexts
+- context.TODO should be used where not sure what to use or if the current function will be updated to use context in future
+- context cancelations are advisory, the functions may take time to clean up and exit
+- context.Value should be used very rarely, it should never be used to pass in optional parameters. This makes the API implicit and can introduce bugs. Instead, such values should be passed in as arguments.
+- Don’t store contexts in a struct, pass them explicitly in functions, preferably, as the first argument.
+- Never pass nil context, instead, use a TODO if you are not sure what to use.
+- The Context struct does not have a cancel method because only the function that derives the context should cancel it.
+
+* Context With Value
+.play ../../example/context/context-withvalue.go
+
+* Context With Timeout
+.play ../../example/context/context-withtimeout.go
+
+* Context With Deadline
+.play ../../example/context/context-withdeadline.go
+
+* Context With Cancel
+.play ../../example/context/context-withcancel.go
+
+* Section 5: Goroutine
+
+Some Text
+
+* Section 6: Concurrency
+
+Some Text
+
+* Example formatting
 
 Formatting:
 _italic_
@@ -67,7 +96,7 @@ _Why_use_scoped__ptr_? Use plain ***ptr* instead.
 
 Visit [[https://golang.org][the Go home page]].
 
-* Section 3: Testing
+* Testing
 
 .background ../../image/golang-img.png
 .iframe https://foo
