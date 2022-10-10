@@ -18,7 +18,42 @@ https://github.com/arganjava
 
 * Section 1: What is GoLang
 
-Some Text
+Golang (atau biasa disebut dengan Go) adalah bahasa pemrograman yang dikembangkan di Google oleh Robert Griesemer, Rob Pike, dan Ken Thompson pada tahun 2007 dan mulai diperkenalkan ke publik tahun 2009.
+Penciptaan bahasa Go didasari bahasa C dan C++, oleh karena itu gaya sintaksnya mirip.
+
+* Pros
+
+- Mendukung konkurensi di level bahasa dengan pengaplikasian cukup mudah
+- Mendukung pemrosesan data dengan banyak prosesor dalam waktu yang bersamaan (pararel processing)
+- Memiliki garbage collector
+- Proses kompilasi sangat cepat
+- Bukan bahasa pemrograman yang hirarkial dan bukan strict OOP, memberikan kebebasan ke developer perihal bagaimana cara penulisan kode.
+- Dependensi dan tooling yang disediakan terbilang lengkap.
+- Dukungan komunitas sangat bagus. Banyak tools yang tersedia secara gratis dan open source yang bisa langsung dimanfaatkan.
+
+- Garbage Collection
+- Memory Safety
+- Automatic Declaration Of Variables
+- Structural Typing
+- CSP-Style Concurrency
+- Keep up with multi-threading
+
+* Cons
+
+- Time Consuming
+- Young Programming Language
+
+* In Picture
+.image ../../image/pros-cons-golang.png
+
+* Use cases Application
+
+- Real-time Applications Development
+- Networking Development
+- Cloud Infrastructure
+- Microservices
+
+
 
 * Section 2: Array - Map - Slice
 
@@ -65,16 +100,16 @@ Some Text
 - Never pass nil context, instead, use a TODO if you are not sure what to use.
 - The Context struct does not have a cancel method because only the function that derives the context should cancel it.
 
-* Context With Value
+* Play - Context With Value
 .play ../../example/context/context-withvalue.go
 
-* Context With Timeout
+* Play - Context With Timeout
 .play ../../example/context/context-withtimeout.go
 
-* Context With Deadline
+* Play - Context With Deadline
 .play ../../example/context/context-withdeadline.go
 
-* Context With Cancel
+* Play - Context With Cancel
 .play ../../example/context/context-withcancel.go
 
 * Section 5: Goroutine
@@ -84,6 +119,13 @@ Some Text
 * Section 6: Concurrency
 
 Some Text
+
+* Section 7: Generics
+
+Some Text
+
+* Play - Generics
+.play ../../example/generics/generics.go
 
 * Example formatting
 
