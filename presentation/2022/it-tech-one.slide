@@ -23,7 +23,7 @@ Penciptaan bahasa Go didasari bahasa C dan C++, oleh karena itu gaya sintaksnya 
 
 * Pros
 
-- Mendukung konkurensi di level bahasa dengan pengaplikasian cukup mudah
+- Mendukung concurrency di level bahasa dengan pengaplikasian cukup mudah
 - Mendukung pemrosesan data dengan banyak prosesor dalam waktu yang bersamaan (pararel processing)
 - Memiliki garbage collector
 - Proses kompilasi sangat cepat
@@ -53,26 +53,27 @@ Penciptaan bahasa Go didasari bahasa C dan C++, oleh karena itu gaya sintaksnya 
 - Cloud Infrastructure
 - Microservices
 
-
-
 * Section 2: Array - Map - Slice
 
 Some Text
 
+* Play - Array
+.play ../../example/array-map-slice/array.go
+
 * Display Partial code map
-.code ../../example/map-slice/map.go /^//START/,/^//END/ HLMAP
-* Play Run
-.play ../../example/map-slice/map.go
+.code ../../example/array-map-slice/map.go /^//START/,/^//END/ HLMAP
+* Play - Map
+.play ../../example/array-map-slice/map.go
 
 * Display Partial code slice
-.code ../../example/map-slice/slice.go /^//START/,/^//END/ HLSLICE
-* Play Run
-.play ../../example/map-slice/slice.go
+.code ../../example/array-map-slice/slice.go /^//START/,/^//END/ HLSLICE
+* Play - Slice
+.play ../../example/array-map-slice/slice.go
 
 * Display Partial code slice-map
-.code ../../example/map-slice/slice-map.go /^//START/,/^//END/ HLSLICEMAP
-* Play Run
-.play ../../example/map-slice/slice-map.go
+.code ../../example/array-map-slice/slice-map.go /^//START/,/^//END/ HLSLICEMAP
+* Play - Slice-Map
+.play ../../example/array-map-slice/slice-map.go
 
 * Section 3: Pointer - Struct - Interface
 
@@ -112,36 +113,21 @@ Some Text
 * Play - Context With Cancel
 .play ../../example/context/context-withcancel.go
 
-* Section 5: Goroutine
+* Section 6: Goroutine
 
 Some Text
 
-* Section 6: Concurrency
+* Section 7: Concurrency
 
 Some Text
 
-* Section 7: Generics
+* Section 8: Generics
 
 Some Text
 
 * Play - Generics
 .play ../../example/generics/generics.go
 
-* Example formatting
+* Section 9: Benchmarks
 
-Formatting:
-_italic_
-*bold*
-`program`
-Markup—_especially_italic_text_—can easily be overused.
-_Why_use_scoped__ptr_? Use plain ***ptr* instead.
-
-Visit [[https://golang.org][the Go home page]].
-
-* Testing
-
-.background ../../image/golang-img.png
-.iframe https://foo
-.link https://foo label
-.html ../../example/file.html
-.caption _Gopher_ by [[https://github.com/mytrix-technology][Mytrix Technology]]
+Some Text
