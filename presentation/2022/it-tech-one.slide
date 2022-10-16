@@ -79,11 +79,24 @@ Some Text
 
 * Section 5: Goroutine
 
-Some Text
+- Goroutine adalah sebuah native thread yang menjalankan tugas secara asynchronous sangat ringat dan hanya membutuhkan sekitar 2kb memory
+- Goroutine menjadi salah satu component terpenting dalam concurrency pemrograman karena multi core processor, semakin banyak core yang aktif maka akan semakin cepat dalam eksekusi program
+- Goroutine Use case : Memanggil api secara async, handle request secara terpisah dan socket
+
+* Section 5a: Contoh Goroutine
+.play ../../example/goroutine/goroutine.go
 
 * Section 6: Concurrency
+- Concurrency adalah sebuah program yang menjalankan proses secara bersamaan tanpa ada impak terhadap proses yang lain
 
-Some Text
+* Section 7: Generic
+- Generic programming adalah sebuah method yang memiliki parameter yang dinamis dimana tipe data yang dimasukan adalah tipe yang bersifat compatible dan biasanya Generic diperuntukan 1 code base for all
+- Generic diperkenal kan oleh golang di versi 1.18
+- DRY(Dont Repeat Yourself) method yang reusable
+
+* Section 7: Contoh Generic
+.play ../../example/generic/generic.go
+
 
 * Example formatting
 
