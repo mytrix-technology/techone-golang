@@ -3,27 +3,19 @@ package main
 import (
 	"fmt"
 	"math"
-	"math/rand"
 	"strings"
-	"time"
 )
 
-type student struct {
-	name  string
-	grade int
-}
-
 func main() {
-	// Function
-	rand.Seed(time.Now().Unix())
-	var randomValue int
+	// Pointer
+	var numberA int = 4
+	var numberB *int = &numberA
 
-	randomValue = randomWithRange(2, 10)
-	fmt.Println("random number:", randomValue)
-	randomValue = randomWithRange(2, 10)
-	fmt.Println("random number:", randomValue)
-	randomValue = randomWithRange(2, 10)
-	fmt.Println("random number:", randomValue)
+	fmt.Println("numberA (value)   :", numberA)  // 4
+	fmt.Println("numberA (address) :", &numberA) // 0xc20800a220
+
+	fmt.Println("numberB (value)   :", *numberB) // 4
+	fmt.Println("numberB (address) :", numberB)  // 0xc20800a220
 
 	// Func Multiple Return
 	var diameter float64 = 15
@@ -37,7 +29,7 @@ func main() {
 	var msg = fmt.Sprintf("Rata-rata : %.2f", avg)
 	fmt.Println(msg)
 
-	// FUnc Closure
+	// Func Closure
 	var max = 3
 	var numbers = []int{2, 3, 0, 4, 3, 2, 0, 4, 2, 0, 3}
 	var howMany, getNumbers = findMax(numbers, max)
@@ -64,55 +56,6 @@ func main() {
 	// filter ada huruf "o" : [jason]
 	fmt.Println("filter jumlah huruf \"5\"\t:", dataLenght5)
 	// filter jumlah huruf "5" : [jason ethan]
-
-	// Pointer
-	var numberA int = 4
-	var numberB *int = &numberA
-
-	fmt.Println("numberA (value)   :", numberA)  // 4
-	fmt.Println("numberA (address) :", &numberA) // 0xc20800a220
-
-	fmt.Println("numberB (value)   :", *numberB) // 4
-	fmt.Println("numberB (address) :", numberB)  // 0xc20800a220
-
-	// Struct
-	var s1 = student{name: "wick", grade: 2}
-
-	var s2 *student = &s1
-	fmt.Println("student 1, name :", s1.name)
-	fmt.Println("student 4, name :", s2.name)
-
-	s2.name = "ethan"
-	fmt.Println("student 1, name :", s1.name)
-	fmt.Println("student 4, name :", s2.name)
-
-	// Method
-	var s11 = student{"john wick", 21}
-	fmt.Println("s11 before", s11.name)
-	// john wick
-
-	s11.changeName1("jason bourne")
-	fmt.Println("s11 after changeName1", s11.name)
-	// john wick
-
-	s11.changeName2("ethan hunt")
-	fmt.Println("s11 after changeName2", s11.name)
-	// ethan hunt
-}
-
-func (s student) changeName1(name string) {
-	fmt.Println("---> on changeName1, name changed to", name)
-	s.name = name
-}
-
-func (s *student) changeName2(name string) {
-	fmt.Println("---> on changeName2, name changed to", name)
-	s.name = name
-}
-
-func randomWithRange(min, max int) int {
-	var value = rand.Int()%(max-min+1) + min
-	return value
 }
 
 func calculate(d float64) (float64, float64) {

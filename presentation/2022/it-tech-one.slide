@@ -3,6 +3,8 @@ First Knowledge in Go Programming Languange
 14:00 21 Oct 2022
 Tags: go, docs, knowledge
 
+# Golang Basic Knowledge
+
 Yudhistiro Tri Aronggo
 Innovation Engineering Technical Lead, BTPN Syariah
 yudhistiro.aronggo@btpnsyariah.com
@@ -15,84 +17,98 @@ https://github.com/arganjava
 
 * Logo
 .image ../../image/golang-img.png
+.background ../../image/content.png
 
 * Section 1: What is GoLang
-
+.background ../../image/content.png
 Golang (atau biasa disebut dengan Go) adalah bahasa pemrograman yang dikembangkan di Google oleh Robert Griesemer, Rob Pike, dan Ken Thompson pada tahun 2007 dan mulai diperkenalkan ke publik tahun 2009.
 Penciptaan bahasa Go didasari bahasa C dan C++, oleh karena itu gaya sintaksnya mirip.
 
-* Pros
+## Use Case
+*Use* *Case* *Application:*
+- Real-time Applications Development
+- Networking Development
+- Cloud Infrastructure
+- Microservices
 
-- Mendukung concurrency di level bahasa dengan pengaplikasian cukup mudah
-- Mendukung pemrosesan data dengan banyak prosesor dalam waktu yang bersamaan (pararel processing)
-- Memiliki garbage collector
-- Proses kompilasi sangat cepat
-- Bukan bahasa pemrograman yang hirarkial dan bukan strict OOP, memberikan kebebasan ke developer perihal bagaimana cara penulisan kode.
-- Dependensi dan tooling yang disediakan terbilang lengkap.
-- Dukungan komunitas sangat bagus. Banyak tools yang tersedia secara gratis dan open source yang bisa langsung dimanfaatkan.
 
-- Garbage Collection
-- Memory Safety
-- Automatic Declaration Of Variables
-- Structural Typing
-- CSP-Style Concurrency
-- Keep up with multi-threading
+* Pros - Cons
+.background ../../image/content.png
 
-* Cons
-
-- Time Consuming
-- Young Programming Language
-
-* In Picture
-.image ../../image/pros-cons-golang.png
+    Pros:
+    - Garbage Collection
+    - Memory Safety
+    - Automatic Declaration Of Variables
+    - Structural Typing
+    - CSP-Style Concurrency
+    - Keep up with multi-threading
+	Cons:
+	- Time Consuming
+	- Young Programming Language
+	- Limited Automation Scope
+	- Implicit Interfaces
 
 * Use cases Application
-
+.background ../../image/content.png
 - Real-time Applications Development
 - Networking Development
 - Cloud Infrastructure
 - Microservices
 
 * Section 2: Array - Map - Slice
-
-Some Text
+.background ../../image/content.png
+- Array : kumpulan data bertipe sama, yang disimpan dalam sebuah variabel. Array memiliki kapasitas yang nilainya ditentukan pada saat pembuatan.
+- Slice : reference elemen array. Slice bisa dibuat, atau bisa juga dihasilkan dari manipulasi sebuah array ataupun slice lainnya. Karena merupakan data reference, menjadikan perubahan data di tiap elemen slice akan berdampak pada slice lain yang memiliki alamat memori yang sama.
+- Map : tipe data asosiatif yang ada di Go, berbentuk key-value pair. Untuk setiap data (atau value) yang disimpan, disiapkan juga key-nya. Key harus unik, karena digunakan sebagai penanda (atau identifier) untuk pengaksesan value yang bersangkutan.
 
 * Play - Array
+.background ../../image/content.png
 .play ../../example/array-map-slice/array.go
-
-* Display Partial code map
-.code ../../example/array-map-slice/map.go /^//START/,/^//END/ HLMAP
-* Play - Map
-.play ../../example/array-map-slice/map.go
-
-* Display Partial code slice
-.code ../../example/array-map-slice/slice.go /^//START/,/^//END/ HLSLICE
 * Play - Slice
+.background ../../image/content.png
 .play ../../example/array-map-slice/slice.go
-
-* Display Partial code slice-map
-.code ../../example/array-map-slice/slice-map.go /^//START/,/^//END/ HLSLICEMAP
+* Play - Map
+.background ../../image/content.png
+.play ../../example/array-map-slice/map.go
 * Play - Slice-Map
+.background ../../image/content.png
 .play ../../example/array-map-slice/slice-map.go
 
 * Section 3: Pointer - Struct - Interface
+.background ../../image/content.png
+- Pointer
+- Struct
+- Interface
 
-Some Text
+* Play - Pointer
+.background ../../image/content.png
+.play ../../example/func-pointer-struct-model/pointer.go
+
+* Play - Struct
+.background ../../image/content.png
+.play ../../example/func-pointer-struct-model/struct.go
+
+* Play - Interface
+.background ../../image/content.png
 
 * Section 4: Function
-
+.background ../../image/content.png
 Some Text
 
-* Section 5: Context
+* Play - Function
+.background ../../image/content.png
+.play ../../example/func-pointer-struct-model/function.go
 
-- contextParent: terbuat dari context.Background(), dia tidak memiliki nilai, karena konsepnya hanya akan berjalan di background.
-- ctx1: merupakan turunan pertama dari contextParent, di ctx1 di isi nilai hello world
-- ctx4: merupakan turunan dari contextParent, merupakan sibling dari ctx1. ctx1 dan ctx4 tidak bisa saling mengakses nilai.
-- ctx2 dan ctx5: merupakan turuan dari ctx1. Masing masing memiliki nilai tersendiri. Dan mereka dapat mengakses nilai dari parent mereka yakni ctx1
-- ctx3: turunan paling kecil dari contextParent. Dia memiliki nilai tersendiri juga dan dia dapat mengakses nilai dari ctx1,dan ctx2. Namun tidak bisa mengakses nilai dari ctx5 ataupun ctx4.
+* Section 5: Context
+.background ../../image/content.png
+Context digunakan untuk mendefinisikan tipe context yang di dalamnya ada beberapa hal yaitu:
+
+- Informasi Deadlines
+- Signal Cancellation
+- Data untuk keperluan komunikasi antar API atau antar proses
 
 * Best Note Context
-
+.background ../../image/content.png
 - context.Background should be used only at the highest level, as the root of all derived contexts
 - context.TODO should be used where not sure what to use or if the current function will be updated to use context in future
 - context cancelations are advisory, the functions may take time to clean up and exit
@@ -102,49 +118,49 @@ Some Text
 - The Context struct does not have a cancel method because only the function that derives the context should cancel it.
 
 * Play - Context With Value
+.background ../../image/content.png
 .play ../../example/context/context-withvalue.go
 
 * Play - Context With Timeout
+.background ../../image/content.png
 .play ../../example/context/context-withtimeout.go
 
 * Play - Context With Deadline
+.background ../../image/content.png
 .play ../../example/context/context-withdeadline.go
 
 * Play - Context With Cancel
+.background ../../image/content.png
 .play ../../example/context/context-withcancel.go
 
 * Section 6: Goroutine
-
+.background ../../image/content.png
 - Goroutine adalah sebuah native thread yang menjalankan tugas secara asynchronous sangat ringat dan hanya membutuhkan sekitar 2kb memory
 - Goroutine menjadi salah satu component terpenting dalam concurrency pemrograman karena multi core processor, semakin banyak core yang aktif maka akan semakin cepat dalam eksekusi program
 - Goroutine Use case : Memanggil api secara async, handle request secara terpisah dan socket
 
-* Section 5a: Contoh Goroutine
+* Play - Goroutine
+.background ../../image/content.png
 .play ../../example/goroutine/goroutine.go
 
-<<<<<<< HEAD
 * Section 7: Concurrency
-=======
-* Section 6: Concurrency
+.background ../../image/content.png
 - Concurrency adalah sebuah program yang menjalankan proses secara bersamaan tanpa ada impak terhadap proses yang lain
 
-* Section 7: Generic
+## Code - Concurrency
+.link ../../example/concurrency-pipeline/concurrency-pipeline.go Concurrency
+.iframe ../../example/concurrency-pipeline/concurrency-pipeline.go
+
+* Section 8: Generic
+.background ../../image/content.png
 - Generic programming adalah sebuah method yang memiliki parameter yang dinamis dimana tipe data yang dimasukan adalah tipe yang bersifat compatible dan biasanya Generic diperuntukan 1 code base for all
 - Generic diperkenal kan oleh golang di versi 1.18
 - DRY(Dont Repeat Yourself) method yang reusable
 
-* Section 7: Contoh Generic
-.play ../../example/generic/generic.go
->>>>>>> main
-
-
-* Section 8: Generics
-
-Some Text
-
 * Play - Generics
-.play ../../example/generics/generics.go
+.background ../../image/content.png
+.play ../../example/generics/generic.go
 
 * Section 9: Benchmarks
-
+.background ../../image/content.png
 Some Text
