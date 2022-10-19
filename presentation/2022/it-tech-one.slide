@@ -31,35 +31,30 @@ Penciptaan bahasa Go didasari bahasa C dan C++, oleh karena itu gaya sintaksnya 
 - Cloud Infrastructure
 - Microservices
 
-
 * Pros - Cons
 .background ../../image/content.png
 
     Pros:
-    - Garbage Collection
-    - Memory Safety
-    - Automatic Declaration Of Variables
-    - Structural Typing
-    - CSP-Style Concurrency
-    - Keep up with multi-threading
+    - Memiliki garbage collector
+    - Mendukung concurrency di level bahasa dengan pengaplikasian cukup mudah
+    - Proses kompilasi sangat cepat dan Memory Safety
+    - Deklarasi Variabel Otomatis
+    - Pengetikan bergaya Structural
+    - Concurrency dengan CSP-Style (Communicating Sequential Processes)
+    - Memiliki Proses Multi-Threading
+    - Proses kompilasi sangat cepat
+    - Mendukung pemrosesan data dengan banyak prosesor dalam waktu yang bersamaan (pararel processing)
 	Cons:
-	- Time Consuming
-	- Young Programming Language
-	- Limited Automation Scope
+	- Time Consuming dalam pemrograman
+	- Bahasa Pemrograman yang terbilang baru
+	- Lingkup Otomasi Terbatas
 	- Implicit Interfaces
-
-* Use cases Application
-.background ../../image/content.png
-- Real-time Applications Development
-- Networking Development
-- Cloud Infrastructure
-- Microservices
 
 * Section 2: Array - Map - Slice
 .background ../../image/content.png
-- Array : kumpulan data bertipe sama, yang disimpan dalam sebuah variabel. Array memiliki kapasitas yang nilainya ditentukan pada saat pembuatan.
-- Slice : reference elemen array. Slice bisa dibuat, atau bisa juga dihasilkan dari manipulasi sebuah array ataupun slice lainnya. Karena merupakan data reference, menjadikan perubahan data di tiap elemen slice akan berdampak pada slice lain yang memiliki alamat memori yang sama.
-- Map : tipe data asosiatif yang ada di Go, berbentuk key-value pair. Untuk setiap data (atau value) yang disimpan, disiapkan juga key-nya. Key harus unik, karena digunakan sebagai penanda (atau identifier) untuk pengaksesan value yang bersangkutan.
+- Array: kumpulan data bertipe sama, yang disimpan dalam sebuah variabel. Array memiliki kapasitas yang nilainya ditentukan pada saat pembuatan.
+- Slice: reference elemen array. Slice bisa dibuat, atau bisa juga dihasilkan dari manipulasi sebuah array ataupun slice lainnya. Karena merupakan data reference, menjadikan perubahan data di tiap elemen slice akan berdampak pada slice lain yang memiliki alamat memori yang sama.
+- Map: tipe data asosiatif yang ada di Go, berbentuk key-value pair. Untuk setiap data (atau value) yang disimpan, disiapkan juga key-nya. Key harus unik, karena digunakan sebagai penanda (atau identifier) untuk pengaksesan value yang bersangkutan.
 
 * Play - Array
 .background ../../image/content.png
@@ -70,15 +65,12 @@ Penciptaan bahasa Go didasari bahasa C dan C++, oleh karena itu gaya sintaksnya 
 * Play - Map
 .background ../../image/content.png
 .play ../../example/array-map-slice/map.go
-* Play - Slice-Map
-.background ../../image/content.png
-.play ../../example/array-map-slice/slice-map.go
 
 * Section 3: Pointer - Struct - Interface
 .background ../../image/content.png
-- Pointer
-- Struct
-- Interface
+- Pointer: reference atau alamat memori. Variabel pointer berarti variabel yang berisi alamat memori suatu nilai. Sebagai contoh sebuah variabel bertipe integer memiliki nilai 4, maka yang dimaksud pointer adalah alamat memori di mana nilai 4 disimpan, bukan nilai 4 itu sendiri.
+- Struct: kumpulan definisi variabel (atau property) dan atau fungsi (atau method), yang dibungkus sebagai tipe data baru dengan nama tertentu. Property dalam struct, tipe datanya bisa bervariasi. Mirip seperti map, hanya saja key-nya sudah didefinisikan di awal, dan tipe data tiap itemnya bisa berbeda.
+- Interface: kumpulan definisi method yang tidak memiliki isi (hanya definisi saja), yang dibungkus dengan nama tertentu.
 
 * Play - Pointer
 .background ../../image/content.png
@@ -90,10 +82,11 @@ Penciptaan bahasa Go didasari bahasa C dan C++, oleh karena itu gaya sintaksnya 
 
 * Play - Interface
 .background ../../image/content.png
+.play ../../example/interface-object-reflect/interface.go
 
 * Section 4: Function
 .background ../../image/content.png
-Some Text
+Sekumpulan blok kode yang dibungkus dengan nama tertentu. Penerapan fungsi yang tepat akan menjadikan kode lebih modular dan juga dry (kependekan dari *don't* *repeat* *yourself*), tak perlu menuliskan banyak kode yang kegunaannya berkali-kali, cukup sekali saja lalu panggil sesuai kebutuhan.
 
 * Play - Function
 .background ../../image/content.png
@@ -107,15 +100,24 @@ Context digunakan untuk mendefinisikan tipe context yang di dalamnya ada beberap
 - Signal Cancellation
 - Data untuk keperluan komunikasi antar API atau antar proses
 
+*Jenis* *Context*:
+
+    - context.TODO
+    - context.Background
+    - context.WithValue
+    - context.WithCancel
+    - context.WithTimeout
+    - context.WithDeadline
+
 * Best Note Context
 .background ../../image/content.png
-- context.Background should be used only at the highest level, as the root of all derived contexts
-- context.TODO should be used where not sure what to use or if the current function will be updated to use context in future
-- context cancelations are advisory, the functions may take time to clean up and exit
-- context.Value should be used very rarely, it should never be used to pass in optional parameters. This makes the API implicit and can introduce bugs. Instead, such values should be passed in as arguments.
-- Don’t store contexts in a struct, pass them explicitly in functions, preferably, as the first argument.
-- Never pass nil context, instead, use a TODO if you are not sure what to use.
-- The Context struct does not have a cancel method because only the function that derives the context should cancel it.
+- context.Background harus digunakan hanya pada tingkat tertinggi, sebagai akar dari semua konteks turunan.
+- context.TODO harus digunakan jika tidak yakin apa yang harus digunakan atau jika fungsi saat ini akan diperbarui untuk menggunakan konteks di masa mendatang.
+- context.WithCancel adalah penasehat, sebuah fungsi yang memerlukan waktu untuk membersihkan dan keluar.
+- context.WithValue harus digunakan sangat jarang, tidak boleh digunakan untuk melewatkan parameter opsional.
+- Jangan menyimpan konteks dalam struct, berikan secara eksplisit dalam fungsi, lebih disukai, sebagai argumen pertama.
+- Jangan pernah melewati konteks nihil, sebagai gantinya, gunakan context.TODO jika Anda tidak yakin apa yang harus digunakan.
+- Struktur Konteks tidak memiliki metode pembatalan karena hanya fungsi yang menurunkan konteks yang harus membatalkannya.
 
 * Play - Context With Value
 .background ../../image/content.png
@@ -128,10 +130,6 @@ Context digunakan untuk mendefinisikan tipe context yang di dalamnya ada beberap
 * Play - Context With Deadline
 .background ../../image/content.png
 .play ../../example/context/context-withdeadline.go
-
-* Play - Context With Cancel
-.background ../../image/content.png
-.play ../../example/context/context-withcancel.go
 
 * Section 6: Goroutine
 .background ../../image/content.png
@@ -147,20 +145,34 @@ Context digunakan untuk mendefinisikan tipe context yang di dalamnya ada beberap
 .background ../../image/content.png
 - Concurrency adalah sebuah program yang menjalankan proses secara bersamaan tanpa ada impak terhadap proses yang lain
 
-## Code - Concurrency
-.link ../../example/concurrency-pipeline/concurrency-pipeline.go Concurrency
-.iframe ../../example/concurrency-pipeline/concurrency-pipeline.go
+* Play - Concurrency
+.background ../../image/content.png
+.play ../../example/concurrency-pipeline/concurrency.go
 
 * Section 8: Generic
 .background ../../image/content.png
 - Generic programming adalah sebuah method yang memiliki parameter yang dinamis dimana tipe data yang dimasukan adalah tipe yang bersifat compatible dan biasanya Generic diperuntukan 1 code base for all
 - Generic diperkenal kan oleh golang di versi 1.18
-- DRY(Dont Repeat Yourself) method yang reusable
+- DRY (*Dont* *Repeat* *Yourself*) method yang reusable
 
 * Play - Generics
 .background ../../image/content.png
 .play ../../example/generics/generic.go
 
-* Section 9: Benchmarks
+* Section 9: Benchmarks (CPU Performance)
 .background ../../image/content.png
-Some Text
+.image ../../image/golang-cpu-performance.png
+
+* Benchmarks (Performance Runtime)
+.background ../../image/content.png
+.image ../../image/Performance-Golang-runtimes.png
+
+* Reference
+.background ../../image/content.png
+.link https://gobyexample.com/ Go by Example
+.link https://dasarpemrogramangolang.novalagung.com/ Dasar Pemrograman Go
+.link https://www.practical-go-lessons.com/ Practical Go Lessons
+.link https://tutorialedge.net/golang/getting-started-with-go/ Tutorial Edge
+.link https://programming-language-benchmarks.vercel.app/go-vs-java Comparison
+.link https://github.com/xnuter/perf-gauge/wiki/Maximum-rate Maximum Rate Comparison
+.link https://levelup.gitconnected.com/go-worker-pool-the-concurrency-powerhouse-2dc7971f4f15 Go Worker Pool Concurrency

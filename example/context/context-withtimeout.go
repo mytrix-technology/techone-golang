@@ -9,8 +9,6 @@ import (
 const shortDuration1 = 1 * time.Millisecond
 
 func main() {
-	// Pass a context with a timeout to tell a blocking function that it
-	// should abandon its work after the timeout elapses.
 	ctx, cancel := context.WithTimeout(context.Background(), shortDuration1)
 	defer cancel()
 
