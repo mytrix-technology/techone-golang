@@ -21,7 +21,8 @@ https://github.com/arganjava
 
 * Section 1: What is GoLang
 .background ../../image/content.png
-Golang (atau biasa disebut dengan Go) adalah bahasa pemrograman yang dikembangkan di Google oleh Robert Griesemer, Rob Pike, dan Ken Thompson pada tahun 2007 dan mulai diperkenalkan ke publik tahun 2009.
+GoLang (atau biasa disebut dengan Go) adalah bahasa pemrograman yang diketik secara statis dan menghasilkan kode biner mesin yang dikompilasi serta unggul dalam hal kecepatan/efisiensi, keandalan, scalable dan kesederhanaan.
+GoLang dikembangkan di Google oleh Robert Griesemer, Rob Pike, dan Ken Thompson pada tahun 2007 dan mulai diperkenalkan ke publik tahun 2009.
 Penciptaan bahasa Go didasari bahasa C dan C++, oleh karena itu gaya sintaksnya mirip.
 
 ## Use Case
@@ -41,7 +42,7 @@ Penciptaan bahasa Go didasari bahasa C dan C++, oleh karena itu gaya sintaksnya 
     - Deklarasi Variabel Otomatis
     - Pengetikan bergaya Structural
     - Concurrency dengan CSP-Style (Communicating Sequential Processes)
-    - Memiliki Proses Multi-Threading
+    - Mendukung Multi-Threading
     - Proses kompilasi sangat cepat
     - Mendukung pemrosesan data dengan banyak prosesor dalam waktu yang bersamaan (pararel processing)
 	Cons:
@@ -142,7 +143,7 @@ Context digunakan untuk mendefinisikan tipe context yang di dalamnya ada beberap
 
 * Section 7: Concurrency
 .background ../../image/content.png
-- Concurrency adalah sebuah program yang menjalankan proses secara bersamaan tanpa ada dampak terhadap proses yang lain
+- Concurrency adalah sebuah program yang menjalankan proses secara bersamaan tanpa ada dampak terhadap proses yang lain Atau Komposisi dari sebuah proses dan terstruktur dalam mengeksekusi proses secara bersamaan.
 
 * Play - Concurrency
 .background ../../image/content.png
@@ -150,8 +151,8 @@ Context digunakan untuk mendefinisikan tipe context yang di dalamnya ada beberap
 
 * Section 8: Generic
 .background ../../image/content.png
-- Generic programming adalah sebuah method yang memiliki parameter yang dinamis dimana tipe data yang dimasukan adalah tipe yang bersifat compatible dan biasanya Generic diperuntukan 1 code base for all
-- Generic diperkenal kan oleh golang di versi 1.18
+- Generic programming adalah metode yang memiliki parameter yang dinamis dimana tipe data yang dimasukan adalah tipe yang bersifat compatible dan biasanya Generic diperuntukan 1 code base for all Atau Metode penulisan kode dimana type data didefinisikan menggunakan type data pasti yang ditulis belakangan saat kode dieksekusi.
+- Generic diperkenalkan oleh golang di versi 1.18
 - DRY (*Dont* *Repeat* *Yourself*) method yang reusable
 
 * Play - Generics
