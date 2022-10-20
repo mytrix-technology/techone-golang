@@ -113,8 +113,7 @@ Context digunakan untuk mendefinisikan tipe context yang di dalamnya ada beberap
 .background ../../image/content.png
 - context.Background harus digunakan hanya pada tingkat tertinggi, sebagai akar dari semua konteks turunan.
 - context.TODO harus digunakan jika tidak yakin apa yang harus digunakan atau jika fungsi saat ini akan diperbarui untuk menggunakan konteks di masa mendatang.
-- context.WithCancel adalah penasehat, sebuah fungsi yang memerlukan waktu untuk membersihkan dan keluar.
-- context.WithValue harus digunakan sangat jarang, tidak boleh digunakan untuk melewatkan parameter opsional.
+- context.WithCancel adalah sebuah fungsi yang memerlukan waktu untuk membersihkan dan keluar.
 - Jangan menyimpan konteks dalam struct, berikan secara eksplisit dalam fungsi, lebih disukai, sebagai argumen pertama.
 - Jangan pernah melewati konteks nihil, sebagai gantinya, gunakan context.TODO jika Anda tidak yakin apa yang harus digunakan.
 - Struktur Konteks tidak memiliki metode pembatalan karena hanya fungsi yang menurunkan konteks yang harus membatalkannya.
@@ -133,8 +132,8 @@ Context digunakan untuk mendefinisikan tipe context yang di dalamnya ada beberap
 
 * Section 6: Goroutine
 .background ../../image/content.png
-- Goroutine adalah sebuah native thread yang menjalankan tugas secara asynchronous sangat ringat dan hanya membutuhkan sekitar 2kb memory
-- Goroutine menjadi salah satu component terpenting dalam concurrency pemrograman karena multi core processor, semakin banyak core yang aktif maka akan semakin cepat dalam eksekusi program
+- Goroutine adalah sebuah native thread yang menjalankan tugas secara asynchronous sangat ringan dan hanya membutuhkan sekitar 2kb memory
+- Goroutine menjadi salah satu komponen terpenting dalam concurrency pemrograman karena multi core processor, semakin banyak core yang aktif maka akan semakin cepat dalam eksekusi program
 - Goroutine Use case : Memanggil api secara async, handle request secara terpisah dan socket
 
 * Play - Goroutine
@@ -143,7 +142,7 @@ Context digunakan untuk mendefinisikan tipe context yang di dalamnya ada beberap
 
 * Section 7: Concurrency
 .background ../../image/content.png
-- Concurrency adalah sebuah program yang menjalankan proses secara bersamaan tanpa ada impak terhadap proses yang lain
+- Concurrency adalah sebuah program yang menjalankan proses secara bersamaan tanpa ada dampak terhadap proses yang lain
 
 * Play - Concurrency
 .background ../../image/content.png

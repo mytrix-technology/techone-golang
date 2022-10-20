@@ -1,0 +1,70 @@
+Golang Error Handling
+Knowledge Error Handling in GoLang
+14:00 02 Des 2022
+Tags: go, docs, knowledge
+
+# Golang Error Handling
+
+Yudhistiro Tri Aronggo
+Innovation Engineering Technical Lead, BTPN Syariah
+yudhistiro.aronggo@btpnsyariah.com
+https://github.com/mytrix-technology
+
+Argan Megariansyah
+Software Engineering Halmahera Squad
+v-argan.mega@btpnsyariah.com
+https://github.com/arganjava
+
+* Logo
+.image ../../image/golang-img.png
+.background ../../image/content.png
+
+* Section 1: What is Error Handling
+.background ../../image/content.png
+Some Text
+
+* Pros - Cons
+.background ../../image/content.png
+
+    Pros:
+    - Memiliki garbage collector
+    - Mendukung concurrency di level bahasa dengan pengaplikasian cukup mudah
+    - Proses kompilasi sangat cepat dan Memory Safety
+    - Deklarasi Variabel Otomatis
+    - Pengetikan bergaya Structural
+    - Concurrency dengan CSP-Style (Communicating Sequential Processes)
+    - Memiliki Proses Multi-Threading
+    - Proses kompilasi sangat cepat
+    - Mendukung pemrosesan data dengan banyak prosesor dalam waktu yang bersamaan (pararel processing)
+	Cons:
+	- Time Consuming dalam pemrograman
+	- Bahasa Pemrograman yang terbilang baru
+	- Lingkup Otomasi Terbatas
+	- Implicit Interfaces
+
+* Section 2:
+.background ../../image/content.png
+Some Text
+
+* Play Error Handling
+.background ../../image/content.png
+// .play ../../example/array-map-slice/array.go
+
+
+* Section 3:
+.background ../../image/content.png
+Some Text
+
+* Play
+.background ../../image/content.png
+// .play ../../example/func-pointer-struct-model/pointer.go
+
+* Section 4: Benchmarks
+.background ../../image/content.png
+.image ../../image/golang-cpu-performance.png
+
+* Reference
+.background ../../image/content.png
+.link https://gobyexample.com/ Go by Example
+.link https://dasarpemrogramangolang.novalagung.com/ Dasar Pemrograman Go
+.link https://www.practical-go-lessons.com/ Practical Go Lessons
